@@ -9,16 +9,14 @@ namespace MMH_BLE_CLI
 {
     class Program
     {
-        BluetoothLEAdvertisementWatcher BleWatcher = new BluetoothLEAdvertisementWatcher
-        {
-            ScanningMode = BluetoothLEScanningMode.Active
-        };
-
         static void Main(string[] args)
         {
             while (true)
             {
-                Console.Write("> ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("└→ ");
+                Console.ResetColor();
+
                 string[] commands = Console.ReadLine().Split();
                 
                 if (commands.Length == 0)
@@ -28,33 +26,30 @@ namespace MMH_BLE_CLI
 
                 switch (commands[0].ToLower())
                 {
+                    case "paired_devices":
+                        Ble.GetPairedDevices();
+                        break;
+
+                    case "help":
+                    case "--help":    // TODO: Show Help
+                        Helpers.PrintHelp();
+                        break;
+
+                    case "--v":
+                    case "version":
+                    case "--version":    // Show app version
+                        Helpers.PrintVersion();
+                        break;
+
                     case "q":
                     case "quit":    // Quit console app
                         System.Environment.Exit(0);
                         break;
 
-                    case "--help":    // TODO: Show Help
-
-                        break;
-
-                    case "--v":
-                    case "--version":    // Show app version
-                        Helpers.PrintVersion();
-                        break;
-
                     default:
+                        Console.WriteLine("Unknown command. Use \"help\" to get list of commands.");
                         break;
                 }
-
-
-                /*if (commands[0].ToLower() == "q" || commands[0].ToLower() == "quit")
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Unknown command. Use \"help\" to get list of commands.");
-                }*/
             }
         }
     }
