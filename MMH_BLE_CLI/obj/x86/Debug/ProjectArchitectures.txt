@@ -1,0 +1,1 @@
+X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\MMH_BLE_CLI.csproj;x86
