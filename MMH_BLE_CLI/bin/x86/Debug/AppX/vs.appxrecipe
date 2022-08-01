@@ -30,13 +30,13 @@
     <AppXManifest Include="X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-08-01T18:08:49.748</Modified>
+      <Modified>2022-08-01T20:51:53.632</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\MMH_BLE_CLI.exe">
       <PackagePath>entrypoint\MMH_BLE_CLI.exe</PackagePath>
-      <Modified>2022-08-01T18:08:49.225</Modified>
+      <Modified>2022-08-01T20:51:53.095</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.13\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -90,11 +90,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-08-01T17:07:40.380</Modified>
+      <Modified>2022-08-01T20:31:53.571</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\Core\MMH_BLE_CLI.exe">
       <PackagePath>MMH_BLE_CLI.exe</PackagePath>
-      <Modified>2022-08-01T18:08:49.745</Modified>
+      <Modified>2022-08-01T20:51:53.630</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
