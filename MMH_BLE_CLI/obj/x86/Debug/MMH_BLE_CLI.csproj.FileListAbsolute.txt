@@ -30,3 +30,4 @@ X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\obj\x86\Debug\.winmd_cache\$M
 X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\Core\AppxManifest.xml
 X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\Core\MMH_BLE_CLI.exe
 X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\MMH_BLE_CLI.build.appxrecipe
+X:\Projects\Programming\C#\MMH_BLE_CLI\MMH_BLE_CLI\bin\x86\Debug\Newtonsoft.Json.dll

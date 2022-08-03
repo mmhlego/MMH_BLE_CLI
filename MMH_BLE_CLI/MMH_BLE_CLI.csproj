@@ -117,7 +117,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Ble.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Core.cs" />
     <Compile Include="Helpers.cs" />
+    <Compile Include="Model\Arguments.cs" />
+    <Compile Include="Model\BleDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -140,7 +144,11 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.13</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

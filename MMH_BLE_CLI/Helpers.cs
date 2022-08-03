@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MMH_BLE_CLI.Model;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,51 +10,38 @@ using Windows.ApplicationModel;
 using Windows.Devices.Bluetooth;
 using Windows.UI.Xaml;
 
-namespace MMH_BLE_CLI
-{
-    class Helpers
-    {
-        static string VERSION = "alpha";
-        static int DEFAULT_TIMEOUT = 5;
-
+namespace MMH_BLE_CLI {
+    class Helpers {
         public static void PrintVersion() { //TODO
-            Console.WriteLine($"Current version: {VERSION}\n");
+            Console.WriteLine($"Current version: {Constants.VERSION}\n");
         }
 
         public static void PrintHelp() { //TODO
             Console.WriteLine("help");
         }
 
-        public static int getTimeout(string[] args) {
-            int index = Array.IndexOf(args, "-t")+1;
-
-            if(index < 0 ) { // No timeout provided
-                return DEFAULT_TIMEOUT;
-            } else if (index >= args.Length) { // 
-                return -1;
-            }
-
-            bool isNumeric = int.TryParse(args[index], out int t);
-            if(isNumeric) { return t; }
-
-            return -1;
+        internal static void PrintModels() {
+            Console.WriteLine("BleDevice model:");
+            Console.WriteLine(
+                JsonConvert.SerializeObject(
+                    new BleDevice() {
+                        name = "string",
+                        address = "string"
+                    })
+                );
+            Console.WriteLine();
         }
 
-        public static string getMacAddress(BluetoothLEDevice device)
-        {
-            try
-            {
-                if (device == null)
-                {
+        public static string GetDeviceAddress(BluetoothLEDevice device) {
+            try {
+                if (device == null) {
                     return "";
                 }
-                var tempMac = device.BluetoothAddress.ToString("X");
-                var regex = "(.{2})(.{2})(.{2})(.{2})(.{2})(.{2})";
-                var replace = "$1:$2:$3:$4:$5:$6";
+                string tempMac = device.BluetoothAddress.ToString("X");
+                string regex = "(.{2})(.{2})(.{2})(.{2})(.{2})(.{2})";
+                string replace = "$1:$2:$3:$4:$5:$6";
                 return Regex.Replace(tempMac, regex, replace);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 return "";
             }
         }
