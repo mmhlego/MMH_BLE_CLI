@@ -1,54 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Devices.Bluetooth.Advertisement;
 
-namespace MMH_BLE_CLI
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            while (true)
-            {
+namespace MMH_BLE_CLI {
+    class Program {
+        static void Main(string[] args) {
+            Ble.Initialize();
+
+            while (true) {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("└→ ");
                 Console.ResetColor();
 
                 string[] commands = Console.ReadLine().Split();
-                
-                if (commands.Length == 0)
-                {
+                commands[0] = commands[0].ToLower();
+
+
+                if (commands.Length == 0) {
                     continue;
-                }
 
-                switch (commands[0].ToLower())
-                {
-                    case "paired_devices":
-                        Ble.GetPairedDevices();
-                        break;
+                } else if (commands[0] == "models") {
+                    Helpers.PrintModels();
 
-                    case "help":
-                    case "--help":    // TODO: Show Help
-                        Helpers.PrintHelp();
-                        break;
+                } else if (commands[0] == "h" || commands[0] == "help") {
+                    Helpers.PrintHelp();
 
-                    case "--v":
-                    case "version":
-                    case "--version":    // Show app version
-                        Helpers.PrintVersion();
-                        break;
+                } else if (commands[0] == "v" || commands[0] == "version") {
+                    Helpers.PrintVersion();
 
-                    case "q":
-                    case "quit":    // Quit console app
-                        System.Environment.Exit(0);
-                        break;
+                } else if (commands[0] == "q" || commands[0] == "quit") {
+                    Environment.Exit(0);
 
-                    default:
-                        Console.WriteLine("Unknown command. Use \"help\" to get list of commands.");
-                        break;
+                } else {
+                    Core.RunCommand(commands);
                 }
             }
         }
